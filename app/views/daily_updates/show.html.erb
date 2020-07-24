@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @daily_update.date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @daily_update.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @daily_update.body %>
+</p>
+
+<%= link_to 'Edit', edit_daily_update_path(@daily_update) %> |
+<%= link_to 'Back', daily_updates_path %>

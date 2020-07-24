@@ -1,0 +1,32 @@
+<%= form_with(model: daily_update, local: true) do |form| %>
+  <% if daily_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(daily_update.errors.count, "error") %> prohibited this daily_update from being saved:</h2>
+
+      <ul>
+        <% daily_update.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.rich_text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
